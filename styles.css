@@ -15,7 +15,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aquamarine;
 }
 
 #start-button {
@@ -175,8 +174,15 @@ body {
 }
 
 @media (max-width: 868px) {
-  div#game-container {
-    width: 95%;
-    height: 70%;
+  body {
+    overflow-y: auto; /* 啟用垂直滾動 */
+  }
+
+  #game-container {
+    width: 95%; /* 手機橫向時自適應寬度 */
+    height: 70%; /* 高度自適應內容 */
+    max-height: 100vh; /* 不超出螢幕高度 */
+    overflow-y: auto; /* 啟用 Y 軸滾動 */
+    overflow-x: hidden; /* 禁用 X 軸滾動 */
   }
 }
